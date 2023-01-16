@@ -54,8 +54,10 @@
                         var finalPrice = 0;
                         //get all order IDs
                         for (i = 0; i < boughtItem.length; i++) {
+                            console.log(boughtItem.length)
                             orderIdList[i] = boughtItem[i].id;
                         }
+                        console.log(orderIdList.length)
                         //unduplicate order IDs
                         orderIdList = [...new Set(orderIdList)];
                         var temp;
