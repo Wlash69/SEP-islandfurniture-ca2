@@ -19,7 +19,7 @@ app.get('/api/getMember', function (req, res) {
     var email = req.query.email;
     member.getMember(email)
         .then((result) => {
-            res.send(result);
+            res.send("Result");
         })
         .catch((err) => {
             console.log(err);
