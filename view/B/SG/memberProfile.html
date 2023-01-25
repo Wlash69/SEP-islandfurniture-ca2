@@ -240,8 +240,7 @@
                             console.log(error);
                         }); 
                     }
-
-                    if(ok) {
+                    else if(ok) {
                         var data = {
                             email: document.getElementById("email").value,
                             name: document.getElementById("name").value,
@@ -265,6 +264,7 @@
                             },
                             body: JSON.stringify(data)
                         })).then(function (response) {
+                            window.alert("Update Member Successful")
                             return response.json();
                         }).then(function (data) {
                             //update member's info in the session storage
