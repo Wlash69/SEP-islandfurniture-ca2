@@ -54,34 +54,46 @@
                         var finalPrice = 0;
                         //get all order IDs
                         for (i = 0; i < boughtItem.length; i++) {
-                            console.log(boughtItem.length)
+                            console.log(boughtItem[i].id)//added to see if i can retrieve the id correctly
                             orderIdList[i] = boughtItem[i].id;
                         }
-                        console.log(orderIdList.length)
+                        console.log(orderIdList)//added to see if the data is still stored
+                        console.log(orderIdList.length)//added to see data lenght
                         //unduplicate order IDs
                         orderIdList = [...new Set(orderIdList)];
                         var temp;
                         var size = orderIdList.length;
                         //sort order ID in ascending order
                         for (i = 0; i < size - 1; i++) {
+                            console.log(i+" running "+ size)//check if this for loop is running
                             for (j = 0; j < size - i - 1; j++) {
+                                console.log(j+" running "+ size)
                                 if (orderIdList[j] > orderIdList[j+1]) {
-                                    temp = orderIdList[j];
-                                    orderIdList[j] = orderIdList[j+1];
-                                    orderIdList[j+1] = temp;
+                                    temp = orderIdList[j+1];
+                                    //orderIdList[j] = orderIdList[j+1]; (changes made**)
+                                    //orderIdList[j+1] = temp;  (changes made**)
+                                    console.log(temp)// check data
+                                }
+                                else{
+                                    temp = orderIdList[j]
+                                    console.log(temp)
+                                    //to fill the temp just in case
                                 }
                             }
                         }
-                                         
-                            htmlTxt += '<h5>Order #' + (1) + '</h5>';
+                            for(k=0;k<boughtItem.length;k++){          
+                            console.log(k)   
+                            htmlTxt += '<h5>Order #' + (k+1) + '</h5>';
                             var counter = 0;
                             //get bought items by order ID
                             for (j = 0; j < boughtItem.length; j++) {
-                            
+                            console.log(boughtItem+"boughtitem") //
+                            console.log(orderIdList +"orderlist")//
                                 if(boughtItem[j].id == orderIdList[0]) {
                                     var item = boughtItem[j];
+                                    console.log(j +' item')//
                                     //display top level info
-                                    if(counter == 0) {
+                                    if(counter<boughtItem.length    ) {
                                         let options = {
                                             weekday: "long", year: "numeric", month: "long",  
                                             day: "numeric", hour: "2-digit", minute: "2-digit"  
@@ -97,6 +109,7 @@
                                             <h6>Name: ' + item.customerName + '</h6>\
                                             <h6>Contact Number: ' + item.phone + '</h6>';
                                         counter++;
+                                        console.log("htmltxt +"+counter)
                                     }
                                 }
                             }
@@ -145,6 +158,7 @@
                                     overallPrice += product.retailPrice.toFixed(2) * product.quantity;
                                 }
                             }
+                        }
                             htmlTxt += '\
                                                                 <tr>\
                                                                     <td></td>\
