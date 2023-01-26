@@ -249,7 +249,7 @@
                                     ok = false;
                                 }else{
                                     var data = {
-                                        "email": session.getItem("memberEmail"),
+                                        "email": sessionStorage.getItem("memberEmail"),
                                         "password": document.getElementById("password").value
                                     }
                                     console.log("Proceeding to call /api/updateMemberPassword");
