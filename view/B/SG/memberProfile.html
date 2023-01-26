@@ -273,7 +273,7 @@
                     }).catch(function (error) {
                         console.log(error);
                     });
-                } else if (ok) {
+                }
                     var data = {
                         email: document.getElementById("email").value,
                         name: document.getElementById("name").value,
@@ -311,7 +311,7 @@
                         window.location.href = url + '?errMsg=Unable to Update.';
                     });
                 }
-            }
+            
         }
 
         async function showMemberDetails() {
