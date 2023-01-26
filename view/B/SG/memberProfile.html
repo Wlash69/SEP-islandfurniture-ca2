@@ -233,6 +233,7 @@
                         },
                         body: JSON.stringify(memberData)
                     })).then(function (response) {
+                        window.alert("Execute /api/updateMemberPassword")
                         return response.json();
                     }).then(function (data) {
                         if (data.success) {
