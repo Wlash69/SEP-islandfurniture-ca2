@@ -254,7 +254,7 @@
                                     }
                                     console.log("Proceeding to call /api/updateMemberPassword");
                                     fetch(new Request('/api/updateMemberPassword',{
-                                        method: 'POST',
+                                        method: 'PUT',
                                         headers: {
                                             'Content-Type': 'application/json',
                                             Authorization: 'Bearer ' + authToken
